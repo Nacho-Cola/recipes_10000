@@ -1,0 +1,8 @@
+Flask==2.1.1
+pydantic==1.10.2
+openai==0.27.2
+requests==2.26.0
+gunicorn==20.1.0  # For deploying Flask app to production
+Jinja2==3.0.3
+Flask-Cors==3.0.10
+simplejson==3.17.6
