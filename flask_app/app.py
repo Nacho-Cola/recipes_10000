@@ -6,20 +6,6 @@ import json
 
 client = OpenAI()
 
-class Step(BaseModel):
-    recipe_step: str
-  
-class Ingredients(BaseModel):
-    name: str
-    ea: str
-
-class RecipesGen(BaseModel):
-    title: str
-    food_summary: str
-    ingredients: str
-    steps: list[Step]
-
-
 app = Flask(__name__, template_folder='public')
 
 @app.route('/')

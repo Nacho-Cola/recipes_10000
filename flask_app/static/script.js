@@ -6,12 +6,13 @@ document.getElementById('ingredient-form').addEventListener('submit', function(e
     chat: ingredientInput  // Modify the key as per your server's expected structure
   };
 
+  const url = "http://172.30.1.13:8888"
   // Show the loading spinner
   const loadingSpinner = document.getElementById('loading-spinner');
   loadingSpinner.style.display = 'block';
 
   // Make the first fetch request to get the recipe data
-  fetch('http://172.30.1.13:8888/generate', {
+  fetch(url+'/generate', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ document.getElementById('ingredient-form').addEventListener('submit', function(e
     document.getElementById('recipe-tips').textContent = recipeData.tips || "No tips provided";
 
     // Now make the second request to generate an image using title and summary
-    return fetch('http://172.30.1.13:8888/generate_img', {
+    return fetch(url+'/generate_img', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
